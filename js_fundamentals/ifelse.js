@@ -7,7 +7,15 @@
 // returns whichever number is the greater (higher) number.
 // Call that function 2 times with different number pairs, and log the output to make sure it works (e.g. "The greater number of 5 and 10 is 10.").
 
-function greaterNum(num1,num2){if(num1 > num2){console.log("The greater number is " + num1);}else if(num2 > num1){console.log("The greater number is " + num2);}else{console.log("The numbers are equal");};};
+function greaterNum(num1,num2){
+  if(num1 > num2){
+    console.log("The greater number is " + num1);
+  }else if(num2 > num1){
+    console.log("The greater number is " + num2);
+  }else{
+    console.log("The numbers are equal");
+  };
+};
 undefined
 greaterNum(17,17);
 The numbers are equal VM7631:2
