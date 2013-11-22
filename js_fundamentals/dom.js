@@ -10,6 +10,24 @@
 // Find the Google search button and store it in a variable.
 // Modify the text of the button so that it says "Yahooo!" instead.
 
+var test = document.getElementById("hplogo");
+undefined
+
+test
+<div title=​"Google" align=​"left" id=​"hplogo" onload=​"window.lol&&lol()​" style=​"background:​url(/​images/​srpr/​logo11w.png)​ no-repeat;​background-size:​269px 95px;​height:​95px;​width:​269px" class=​"selectorgadget_selected">​…​</div>​
+
+test.setAttribute("style","background:url(http://l.yimg.com/rz/d/yahoo_frontpage_en-CA_s_f_p_101x50_frontpage.png) no-repeat;background-size:269px 95px;height:95px;width:269px");
+undefined
+
+var test = document.getElementById("gbqfsa");
+undefined
+
+test
+<span id=​"gbqfsa" class=​"selectorgadget_selected">​Google Search​</span>​
+
+test.innerHTML="Yahoo Search!";
+"Yahoo Search!"
+
 // EXERCISE: About Me
 
 // Cuz every webpage needs an "About" section.

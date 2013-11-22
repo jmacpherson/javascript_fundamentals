@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Booklist</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // Set list-style to none
+    var head = document.head;
+    var styleTag = document.createElement("style");
+    styleTag.setAttribute("type", "text/css");
+    var styleContent = document.createTextNode("li {list-style: none;}");
+    styleTag.appendChild(styleContent);
+    head.appendChild(styleTag);
+
+// Create Book constructor
+    function Book(title, author, alreadyRead, imgURL) {
+      this.title = title;
+      this.author = author;
+      this.alreadyRead = alreadyRead;
+      this.imgURL = imgURL;
+      this.display = function() {
+        if (alreadyRead) {
+          console.log("You have already read " + this.title + " by " + this.author + ".");
+        } else {
+          console.log("You have not yet read " + this.title + " by " + this.author + ".");
+        };
+      };
+    };
+
+// create library object
+    var library = {
+      books: [],
+      addBook: function(book) {
+        this.books.push(book);
+      },
+      display: function() {
+        var body = document.body;
+        var listTag = document.createElement("ul");
+        for (var i = 0; i < this.books.length; i++) {
+          var listItem = document.createElement("li");
+          var listItemContent = document.createTextNode(this.books[i].title + " by: " + this.books[i].author);
+          listItem.appendChild(listItemContent);
+          listItem.appendChild(document.createElement("br"))
+          var imgTag = document.createElement("img");
+          imgTag.setAttribute("src", this.books[i].imgURL);
+          if (this.books[i].alreadyRead) {
+            imgTag.setAttribute("style", "width: 100px;border:1px solid black;padding:10px;");
+          } else {
+            imgTag.setAttribute("style", "width:100px;");  
+          }
+          listItem.appendChild(imgTag);
+          listTag.appendChild(listItem);
+        }
+        body.appendChild(listTag);
+      }
+    };
+
+// Add books to library
+    library.addBook(new Book("Snow Crash", "Neal Stephenson", false, "http://upload.wikimedia.org/wikipedia/en/d/d5/Snowcrash.jpg"));
+    library.addBook(new Book("Someplace To Be Flying", "Charles De Lint", true, "http://cache.smashwire.com/bookCovers/b9cc1b801d8e04783e428859253243675d5f2dcd"));
+    library.addBook(new Book("Neurmancer", "William Gibson", true, "http://www.quietearth.us/img/n/neuromancer-p1.jpg"));
+    library.addBook(new Book("The Left Hand of Darkness", "Ursula K. LeGuin", true, "http://www.lwcurrey.com/pictures/135241_1.jpg"));
+
+// write contents of library to html
+    library.display();
+  </script>
+</body>
+</html>

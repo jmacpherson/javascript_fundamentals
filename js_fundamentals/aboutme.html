@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8"/>
+  <title>About Me</title>
+  </head>
+  <body>
+    <h1>About Me</h1>
+  
+    <ul>
+      <li>Nickname: <span id="nickname"></span>
+      <li>Favorites:  <span id="favorites"></span>
+      <li>Hometown: <span id="hometown"></span>
+    </ul>
+    <script type="text/javascript">
+      // document.body.style.backgroundColor="red";
+      document.body.style.fontFamily="Arial, sans-serif";
+        
+      document.getElementById("nickname").innerHTML="jack harkness";
+      document.getElementById("favorites").innerHTML="73, watermelon, pad thai";
+      document.getElementById("hometown").innerHTML="Boh";
+
+      var listItems = document.getElementsByTagName("li");
+      for (var i = 0; i < listItems.length; i++) {
+        listItems[i].className = "listitem";
+      };
+
+      var head = document.head
+      var styleTag = document.createElement("style");
+      styleTag.setAttribute("type","text/css");
+      var styleContent = document.createTextNode(".listitem{color:red;}");
+      styleTag.appendChild(styleContent);
+      head.appendChild(styleTag);
+
+      var body = document.body
+      var imgTag = document.createElement("img");
+      imgTag.setAttribute("src","http://kerrifargomyblog.files.wordpress.com/2011/01/vortex.png");
+      body.appendChild(imgTag);
+    </script>  
+  </body>
+</html>
