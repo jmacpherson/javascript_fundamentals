@@ -10,7 +10,7 @@
     var head = document.head;
     var styleTag = document.createElement("style");
     styleTag.setAttribute("type", "text/css");
-    var styleContent = document.createTextNode("li {list-style: none;}");
+    var styleContent = document.createTextNode("li {list-style: none;display: inline-block;margin: 0 10px;width:166px;}");
     styleTag.appendChild(styleContent);
     head.appendChild(styleTag);
 
@@ -43,13 +43,14 @@
           var listItemContent = document.createTextNode(this.books[i].title + " by: " + this.books[i].author);
           listItem.appendChild(listItemContent);
           listItem.appendChild(document.createElement("br"))
+          if (this.books[i].alreadyRead) {
+            listItem.setAttribute("style", "border:1px solid black;padding:10px;");
+          } else {
+            listItem.setAttribute("style", "border:1px solid green;padding:10px;");  
+          }
           var imgTag = document.createElement("img");
           imgTag.setAttribute("src", this.books[i].imgURL);
-          if (this.books[i].alreadyRead) {
-            imgTag.setAttribute("style", "width: 100px;border:1px solid black;padding:10px;");
-          } else {
-            imgTag.setAttribute("style", "width:100px;");  
-          }
+          imgTag.setAttribute("style", "width:100px;");
           listItem.appendChild(imgTag);
           listTag.appendChild(listItem);
         }
